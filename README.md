@@ -52,6 +52,7 @@
 &nbsp;   
 
 ### 파일 추가 규칙
++ 일단 다른 사람의 코드를 바로 못보도록 `각자 upstream 레포 fork ▶︎ 본인 branch 파서 본인 branch에서 풀이 ▶︎ 본인 remote에 push 후 ▶︎ upstream main에 pr` 방식으로 진행
 
 + 본인이 구현하거나 푼 문제는 PR을 보냅니다. PR 규칙은 아래와 같습니다.
 
@@ -95,6 +96,7 @@
   + 이분 탐색
 + 동적 계획법
   + LCS
+  + LIS
   + Knapsack Problem
 + 그리디
 + 투포인터
