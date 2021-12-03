@@ -36,6 +36,9 @@
 &nbsp;   
 
 ## 💾 Github 이용 방식
+참고: [단국대학교 알고리즘 스터디](https://github.com/DKU-STUDY/Algorithm)
+
+&nbsp;
 
 ### 각 폴더 구조
 
