@@ -1,6 +1,6 @@
 # 💻 알고리즘 스터디
 
-+ 참여자: 🐶 [Coden](https://github.com/ictechgy)
++ 참여자: 🐶 [Coden](https://github.com/ictechgy), 😺 [타코캣](https://github.com/Ldoy), 🍅 [Soll](https://github.com/soll4u), 🌹 [Ellen](https://github.com/jcrescent61), 🍉 [수박](https://github.com/soo941226), 🔫 [Geon](https://github.com/jgkim1008), 🧅 [Chalotte](https://github.com/yaewonLee)
 
 *🙏 Especially thanks to 🦜 [vivi](https://github.com/YebinKim), 💎 [Joey](https://github.com/joey-ful)*
 
@@ -41,32 +41,39 @@
 
 + BasicConcepts - 기본 개념 구현 내용들
   + 개념별로 하위 폴더를 구성한 뒤 그 안에 구현 파일을 넣습니다. 
-  + 구현 파일명은 `[개념명_구현자 이름].swift`로 합니다.
+  + 구현 폴더명은 대문자로 시작하여 camel case로 작성한다. ex) Stack, BinarySearchTree, HashTable
+  + 구현 파일명은 `[상위폴더명_구현자닉네임].swift`로 합니다.
 + Programmers - 프로그래머스 푼 문제들
-  + 문제별로 하위 폴더를 구성한 뒤 그 안에 푼 문제 파일을 넣습니다.
-  + 파일명은 `[문제명_푼 사람 이름].swift`로 합니다.
+  + 각자 본인의 폴더를 생성한 뒤 내부에 본인이 푼 문제를 모아놓는다. ex) Programmers_Ellen 폴더, Programmers_Geon 폴더
+  + 파일명은 `[문제명_구현자닉네임].swift`로 합니다.
 + Boj - 백준 푼 문제들
-  + 문제별로 하위 폴더를 구성한 뒤 그 안에 푼 문제 파일을 넣습니다.
-  + 파일명은 `[문제 번호_제목_푼 사람 이름].swift`로 합니다.
+  + 각자 본인의 폴더를 생성한 뒤 내부에 본인이 푼 문제를 모아놓는다. ex) Boj_Ellen 폴더, Boj_Geon 폴더
+  + 파일명은 `[문제번호_구현자닉네임].swift`로 합니다.
 
 &nbsp;   
 
-### 파일 추가 규칙
-+ 일단 다른 사람의 코드를 바로 못보도록 `각자 upstream 레포 fork ▶︎ 본인 branch 파서 본인 branch에서 풀이 ▶︎ 본인 remote에 push 후 ▶︎ upstream main에 pr` 방식으로 진행
-
-+ 본인이 구현하거나 푼 문제는 PR을 보냅니다. PR 규칙은 아래와 같습니다.
-
-  
-
-+ PR이 온 것에 대한 리뷰?
+### Flow
++ 이 repo에 대한 collarborator 권한을 지닌 각 멤버는 본인의 branch를 판 뒤 그 곳에 코드를 작성/구현한다. 
++ 금요일 스터디 모임 때 이야기를 나눈 뒤 문제가 없으면 모든 branch를 main에 merge한다.(각자 알아서 merge시키기) 
+&nbsp;
+### Issue
++ 궁금한 것이나 문제가 발생한 것이 있으면 [Issue](https://github.com/ictechgy/AlgorithmStudy/issues)를 이용하도록 한다. Label 필수!
++ 자료구조/알고리즘 이슈 양식 - `[스택] pop이 잘 안돼요~~ / [다익스트라] 최단경로가 이상하게 구해져요~ `와 같이 자료구조명/알고리즘명 작성 후 제목 작성
++ 백준/프로그래머스 문제 풀던 중 발생한 이슈 양식 - `[10256-요세푸스 0] 자꾸 시간초과가 나요! / [level01-키패드 누르기] 런타임 오류가 발생해요! `와 같이 문제번호나 문제레벨 및 문제명 작성 후 제목작성
++ 내용에는 문제에 대한 링크를 꼭 넣기!
+&nbsp;
+### 커밋 규칙
++ boj: 문제명
++ programmers: 문제명
++ concepts: 알고리즘/자료구조 구현이름
 
 &nbsp;   
 
 ## 🔥 진행 기록
 
-| week  | 다룬 내용 | 푼 문제 |
-| :---: | :-------: | :-----: |
-| 1주차 |           |         |
+| week | 미리 해오기 | 다룬 내용 | 푼 문제 |
+| :---: |:---| :-------: | :-----: |
+| 1주차(2021-12-10)| 1. 시간복잡도에 대한 강의 두개-[첫번째](https://www.youtube.com/watch?v=kg-bcK1ygIA), [두번째](https://www.youtube.com/watch?v=SO7xhml3Np4)- 들어오기<br/>2. 백준 [입출력과 사칙연산 11문제](https://www.acmicpc.net/step/1) 모두 풀어오기<br/>3. 기본적인 자료구조(스택, 큐, 연결리스트) 구현해오기<br/>4. 백준 문제 풀어오기<br/>[10828-스택](https://www.acmicpc.net/problem/10828), [4949-균형잡힌 세상](https://www.acmicpc.net/problem/4949)<br/> [18258-큐 2](https://www.acmicpc.net/problem/18258), [11866-요세푸스 문제 0](https://www.acmicpc.net/problem/11866)  |           |         |
 
 
 
