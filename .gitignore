@@ -134,4 +134,6 @@ iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,xcode,swift
 
-*/**/main.swift
+# Excluding files that are not related to algorithm problem solving.
+**/main.swift
+**/*.xcodeproj
