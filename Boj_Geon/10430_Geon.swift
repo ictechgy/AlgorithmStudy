@@ -16,10 +16,10 @@ func calculateRest() {
     let first = input[0]
     let second = input[1]
     let third = input[2]
-    print("\((first + second) % third)")
-    print("\(((first % third) + (second % third)) % third)")
-    print("\((first * second) % third)")
-    print("\(((first % third) * (second % third)) % third)")
+    print(((first + second) % third))
+    print((((first % third) + (second % third)) % third))
+    print(((first * second) % third))
+    print((((first % third) * (second % third)) % third))
 }
 
 

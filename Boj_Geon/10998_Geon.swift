@@ -15,7 +15,7 @@ func multiplication() {
     let input = receiveInput()
     let first = input[0]
     let second = input[1]
-    print("\(first*second)")
+    print(first*second)
 }
 
 multiplication()
