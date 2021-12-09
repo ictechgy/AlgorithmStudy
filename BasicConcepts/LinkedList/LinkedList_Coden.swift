@@ -49,16 +49,16 @@ struct LinkedList<T: Equatable> {
         }
         
         var remainingDistance = index
-        var beforeNode: Node<T>? = nil
+        var previousNode: Node<T>? = nil
         var nextNode = head
         while remainingDistance != .zero {
-            beforeNode = nextNode
+            previousNode = nextNode
             nextNode = nextNode?.next
             remainingDistance -= 1
         }
         let newNode = Node(data: data)
         newNode.next = nextNode
-        beforeNode?.next = newNode
+        previousNode?.next = newNode
         
         return data
     }
@@ -90,16 +90,16 @@ struct LinkedList<T: Equatable> {
         if index == firstIndex {
             return deleteFront()
         }
-        var beforeNode: Node<T>? = nil
+        var previousNode: Node<T>? = nil
         var targetNode = head
         var countToDestination = firstIndex
         while countToDestination != index {
-            beforeNode = targetNode
+            previousNode = targetNode
             targetNode = targetNode?.next
             countToDestination += 1
         }
         let data = targetNode?.data
-        beforeNode?.next = targetNode?.next
+        previousNode?.next = targetNode?.next
         
         return data
     }
