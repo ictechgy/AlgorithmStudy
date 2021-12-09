@@ -9,6 +9,7 @@ import Foundation
 
 struct Stack<AnyType> {
     private var linkedList = LinkedList()
+    var size = 0
 
     var head: AnyType? {
         linkedList.tail?.value
@@ -20,11 +21,14 @@ struct Stack<AnyType> {
 
     mutating func push(_ value: AnyType) {
         linkedList.append(value)
+        size += 1
     }
 
     mutating func pop() -> AnyType? {
         defer {
-            linkedList.removeLast()
+            if linkedList.removeLast() {
+                size -= 1
+            }
         }
 
         return linkedList.tail?.value
@@ -89,9 +93,20 @@ extension Stack {
             }
         }
 
-        mutating func removeLast() {
-            tail = tail?.prev
-            tail?.next = nil
+        mutating func removeLast() -> Bool {
+            defer {
+                if tail == nil {
+                    head = nil
+                }
+            }
+            
+            if tail != nil {
+                tail = tail?.prev
+                tail?.next = nil
+                return true
+            } else {
+                return false
+            }
         }
 
         init() { }
