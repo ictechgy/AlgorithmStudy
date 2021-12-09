@@ -17,14 +17,14 @@ struct Queue<Element> {
     var front: Element? {
         return storage.first
     }
-    var back: Element? {
+    var rear: Element? {
         return storage.last
     }
     
-    mutating func push(_ element: Element) {
+    mutating func enqueue(_ element: Element) {
         storage.append(element)
     }
-    mutating func pop() -> Element? {
+    mutating func dequeue() -> Element? {
         if isEmpty {
             return nil
         }
