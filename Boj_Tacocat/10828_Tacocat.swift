@@ -14,14 +14,16 @@ struct Stack {
     private static let invalidRequest = -1
     static var result: [Int] = []
     
-    
     static func push(this number: Int) {
         self.store.append(number)
     }
     
     static func pop() {
-       let last =  self.store.popLast()
-        result.append(last ?? .zero)
+        if let last =  self.store.popLast() {
+            result.append(last)
+        } else {
+            result.append(invalidRequest)
+        }
     }
     
     static func size() {
@@ -37,8 +39,11 @@ struct Stack {
     }
     
     static func top() {
-        let last =  self.store.last
-        result.append(last ?? .zero)
+        if let last =  self.store.last {
+            result.append(last)
+        } else {
+            result.append(invalidRequest)
+        }
     }
 }
 
