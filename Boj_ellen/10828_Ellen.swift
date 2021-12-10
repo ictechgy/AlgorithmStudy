@@ -17,7 +17,7 @@ for _ in 1...userInput {
         case "push":
             stack.append(Int(splitedInput[1])!)
         case "pop":
-            if stack.isEmpty == true {
+            if stack.isEmpty {
                 print("-1")
             } else {
                 print(stack.popLast()!)
@@ -25,13 +25,18 @@ for _ in 1...userInput {
         case "size":
             print(stack.count)
         case "empty":
-            if stack.isEmpty == true {
+            if stack.isEmpty {
                 print("1")
             } else {
                 print("0")
             }
         case "top":
-            print(stack.last!)
+            if stack.isEmpty {
+                print("-1")
+            } else {
+                print(stack.last!)
+
+            }
         default: break
         }
     }
