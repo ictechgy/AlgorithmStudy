@@ -65,7 +65,6 @@ extension Queue {
 
             if isEmpty {
                 head = newNode
-                head?.next = newNode
             } else {
                 tail?.next = newNode
                 newNode.prev = tail
