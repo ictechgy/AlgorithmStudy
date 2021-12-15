@@ -7,52 +7,53 @@
 
 import Foundation
 
-struct LinkedList<Value> {
-    private var head: Node<Value>?
-    private var tail: Node<Value>?
-}
-
-extension LinkedList {
-    func isEmpty() -> Bool {
-        return head == nil
-    }
-    
-    mutating func append(_ value: Value) {
-        if isEmpty() {
-            head = Node(value: value)
-            tail = head
-            return
-        }
+struct LinkedList<T> {
+    class Node<T> {
+        var data: T
+        var next: Node?
         
-        tail?.next = Node(value: value)
-        tail = tail?.next
+        init(value: T) {
+            self.data = value
+        }
     }
     
-    mutating func remove() -> Value? {
-        defer { head = head?.next }
-        return head?.value
+    var head: Node<T>?
+    
+    var size: Int {
+        var count = Int.zero
+        var start = head
+        
+        while start?.next != nil {
+            count += 1
+            start = start?.next
+        }
+        return count
     }
     
-    mutating func removeAll() {
-        head = nil
-        tail = nil
+    var isEmpty: Bool {
+        head? == nil
     }
     
-    func glance() -> Value? {
-        return head?.value
-    }
-}
-
-class Node<Value> {
-    var value: Value
-    var next: Node? = nil
-    
-    init(value: Value) {
-        self.value = value
+    init(value: T) {
+        self.head = Node<T>(value: value)
     }
     
-    init(value: Value, next: Node?) {
-        self.value = value
-        self.next = next
+    mutating func insert(value: T) {
+        if head == nil {
+            head = Node<T>(value: value)
+        } else {
+            head?.next = Node<T>(value: value)
+        }
+    }
+    
+    mutating func delete() -> T? {
+        defer {
+            head = head?.next
+        }
+        return head?.data
+    }
+    
+    func front() -> T? {
+        head?.data
     }
 }
