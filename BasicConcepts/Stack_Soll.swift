@@ -11,7 +11,7 @@ class Stack<T> {
         stack.last
     }
     var isEmpty: Bool {
-        stack.isEmpty ? true : false
+        stack.isEmpty
     }
     var size: Int {
         stack.count
