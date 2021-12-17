@@ -81,6 +81,7 @@
 | :---: |:---| 
 | 1주차(~2021-12-10)| 1. 시간복잡도에 대한 강의 두개-[첫번째](https://www.youtube.com/watch?v=kg-bcK1ygIA), [두번째](https://www.youtube.com/watch?v=SO7xhml3Np4)- 들어오기<br/>2. 백준 [입출력과 사칙연산 11문제](https://www.acmicpc.net/step/1) 모두 풀어오기<br/>3. 기본적인 자료구조(스택, 큐, 연결리스트) 구현해오기<br/>4. 백준 문제 풀어오기<br/>[10828-스택](https://www.acmicpc.net/problem/10828), [4949-균형잡힌 세상](https://www.acmicpc.net/problem/4949)<br/> [18258-큐 2](https://www.acmicpc.net/problem/18258), [11866-요세푸스 문제 0](https://www.acmicpc.net/problem/11866)  |
 | 2주차(~2021-12-17)| 1. 알고리즘 강의 '순환 (Recursion) 의 개념과 기본 예제 1~3' 듣고 피보나치, 팩토리얼 재귀함수로 구현해오기. <br/> 2. 1주차에 다 하지 못한 내용 해오기|
+| 3주차(~2021-12-24)| 1. '2주차 강의'에서 나온 아래 두 개념을 구현해보자<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `순차 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `이진 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>2. 문제 풀어오기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [숫자 카드 2](https://www.acmicpc.net/problem/10816) 풀기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [완전탐색-모의고사](https://programmers.co.kr/learn/courses/30/parts/12230) 풀기<br/>• 다음주에 추가적으로 이야기 해볼 내용 - 피보나치, 팩토리얼 - Memoization, DP 찍먹<br/>&nbsp;&nbsp;&nbsp;&nbsp;▪︎ 재귀 최적화와 꼬리 재귀도 같이 알아보면 좋을 것 같다.|
 
 &nbsp;
 
