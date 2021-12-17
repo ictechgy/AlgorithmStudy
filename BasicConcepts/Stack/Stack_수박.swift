@@ -5,13 +5,11 @@
 //  Created by kjs on 2021/12/09.
 //
 
-import Foundation
-
 struct Stack<AnyType> {
     private var linkedList = LinkedList()
-    var size = 0
+    private(set) var size = 0
 
-    var head: AnyType? {
+    var top: AnyType? {
         linkedList.tail?.value
     }
 
@@ -65,32 +63,12 @@ extension Stack {
 
             if isEmpty {
                 head = newNode
-                head?.next = newNode
             } else {
                 tail?.next = newNode
                 newNode.prev = tail
             }
 
             tail = newNode
-        }
-
-        var target: Node? {
-            return head?.next
-        }
-
-        mutating func remove(target: Node?) {
-            var targetToDelete = head
-
-            while target !== targetToDelete {
-                targetToDelete = targetToDelete?.next
-            }
-
-            if let previousNode = targetToDelete?.prev {
-                previousNode.next = targetToDelete?.next
-                previousNode.next?.prev = previousNode
-            } else {
-                head = targetToDelete?.next
-            }
         }
 
         mutating func removeLast() -> Bool {
