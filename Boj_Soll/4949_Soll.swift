@@ -9,31 +9,16 @@ import Foundation
 
 class Stack {
     var stack: [Character] = []
+    var isEmpty: Bool {
+        stack.isEmpty
+    }
     
     func push(x: Character) {
         stack.append(x)
     }
-    
+
     func pop() -> Character? {
         if let n = stack.popLast() {
-            return n
-        }
-        return nil
-    }
-    
-    func size() -> Int {
-        stack.count
-    }
-    
-    func empty() -> Bool {
-        if stack.isEmpty {
-            return true
-        }
-        return false
-    }
-    
-    func top() -> Character? {
-        if let n = stack.last {
             return n
         }
         return nil
@@ -41,37 +26,43 @@ class Stack {
 }
 
 
-for _ in 0..<100 {
+while true {
     var input = readLine()!
     
     if input == "." {
-        exit(0)
+        break
     }
-    
+
     let bracketStack = Stack()
-    var isValid = false
-    
-    input.removeLast()
+    var isValid = true
+
     let trimmedInput = input.trimmingCharacters(in: .whitespacesAndNewlines)
-    
-    if trimmedInput.isEmpty {
-        print("yes")
-        continue
-    }
-    
+
     for char in trimmedInput {
         if char == "(" || char == "[" {
             bracketStack.push(x: char)
-        }
-        
-        if char == ")" && bracketStack.pop() == "(" {
-            isValid = true
-        }
-        
-        if char == "]" && bracketStack.pop() == "[" {
-            isValid = true
+        } else if char == ")" || char == "]" {
+            if bracketStack.isEmpty {
+                isValid = false
+                break
+            }
+            if char == ")" && bracketStack.pop() != "(" {
+                isValid = false
+                break
+            } else if char == "]" && bracketStack.pop() != "[" {
+                isValid = false
+                break
+            }
         }
     }
-    
-    print(isValid ? "yes" : "no")
+
+    if isValid == false {
+        print("no")
+    } else {
+        if !bracketStack.isEmpty {
+            print("no")
+        } else {
+            print("yes")
+        }
+    }
 }
