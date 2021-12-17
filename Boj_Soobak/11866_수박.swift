@@ -1,15 +1,51 @@
 //
-//  Stack_수박.swift
+//  11866_수박.swift
 //  AlgorithmStudy
 //
-//  Created by kjs on 2021/12/09.
+//  Created by kjs on 2021/12/15.
 //
+import Foundation
 
-struct Stack<AnyType> {
+if let input = readLine()?.split(separator: " "),
+   let desiredLength = Int(input[0]),
+   let term = Int(input[1]) {
+    //setting
+    var result = [Int]()
+    var queue = Queue<Int>()
+    for int in 1...desiredLength {
+        queue.insert(int)
+    }
+
+    //solution
+    var index = 0
+    while result.count < desiredLength {
+        index += 1
+
+        if let element = queue.delete() {
+            if index % term == 0 {
+                result.append(element)
+                index = 0
+            } else {
+                queue.insert(element)
+            }
+        }
+    }
+
+    print(result.reduce("<") { $0 + $1.description + ", "}.dropLast(2) + ">")
+}
+
+
+
+
+struct Queue<AnyType> {
     private var linkedList = LinkedList()
     private(set) var size = 0
 
-    var top: AnyType? {
+    var head: AnyType? {
+        linkedList.head?.value
+    }
+
+    var tail: AnyType? {
         linkedList.tail?.value
     }
 
@@ -17,25 +53,25 @@ struct Stack<AnyType> {
         linkedList.head == nil
     }
 
-    mutating func push(_ value: AnyType) {
+    mutating func insert(_ value: AnyType) {
         linkedList.append(value)
         size += 1
     }
 
-    mutating func pop() -> AnyType? {
+    mutating func delete() -> AnyType? {
         defer {
-            if linkedList.removeLast() {
+            if linkedList.removeFirst() {
                 size -= 1
             }
         }
 
-        return linkedList.tail?.value
+        return linkedList.head?.value
     }
 }
 
 
 // MARK: - components
-extension Stack {
+extension Queue {
     private class Node {
         private(set) var value: AnyType
         weak var prev: Node?
@@ -71,16 +107,13 @@ extension Stack {
             tail = newNode
         }
 
-        mutating func removeLast() -> Bool {
-            defer {
-                if tail == nil {
-                    head = nil
-                }
-            }
-            
-            if tail != nil {
-                tail = tail?.prev
-                tail?.next = nil
+        var target: Node? {
+            return head?.next
+        }
+
+        mutating func removeFirst() -> Bool {
+            if head != nil {
+                head = head?.next
                 return true
             } else {
                 return false

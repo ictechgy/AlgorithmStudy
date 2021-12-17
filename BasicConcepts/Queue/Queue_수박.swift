@@ -5,8 +5,6 @@
 //  Created by kjs on 2021/12/09.
 //
 
-import Foundation
-
 struct Queue<AnyType> {
     private var linkedList = LinkedList()
 
@@ -27,11 +25,7 @@ struct Queue<AnyType> {
     }
 
     mutating func delete() -> AnyType? {
-        defer {
-            linkedList.removeFirst()
-        }
-
-        return linkedList.head?.value
+        return linkedList.removeFirst()
     }
 }
 
@@ -65,7 +59,6 @@ extension Queue {
 
             if isEmpty {
                 head = newNode
-                head?.next = newNode
             } else {
                 tail?.next = newNode
                 newNode.prev = tail
@@ -74,32 +67,12 @@ extension Queue {
             tail = newNode
         }
 
-        var target: Node? {
-            return head?.next
-        }
-
-        mutating func remove(target: Node?) {
-            var targetToDelete = head
-
-            while target !== targetToDelete {
-                targetToDelete = targetToDelete?.next
+        mutating func removeFirst() -> AnyType? {
+            defer {
+                head = head?.next
             }
 
-            if let previousNode = targetToDelete?.prev {
-                previousNode.next = targetToDelete?.next
-                previousNode.next?.prev = previousNode
-            } else {
-                head = targetToDelete?.next
-            }
-        }
-
-        mutating func removeFirst() {
-            head = head?.next
-        }
-
-        mutating func removeLast() {
-            tail = tail?.prev
-            tail?.next = nil
+            return head?.value
         }
 
         init() { }
