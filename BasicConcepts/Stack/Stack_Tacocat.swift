@@ -19,11 +19,7 @@ struct Stack<Value> {
     }
 
     func isEmpty() -> Bool {
-        if store.isEmpty {
-            return true
-        } else {
-            return false
-        }
+        store.isEmpty
     }
 
     func peek() -> Value? {
