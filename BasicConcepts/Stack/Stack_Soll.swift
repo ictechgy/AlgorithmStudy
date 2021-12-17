@@ -5,9 +5,10 @@
 //  Created by Dasoll Park on 2021/12/16.
 //
 
-class Stack<T> {
-    var stack: [T] = []
-    var top: T? {
+final class Stack<Element> {
+    private var stack: [Element] = []
+    
+    var top: Element? {
         stack.last
     }
     var isEmpty: Bool {
@@ -17,11 +18,11 @@ class Stack<T> {
         stack.count
     }
     
-    func push(item: T) {
+    func push(item: Element) {
         stack.append(item)
     }
     
-    func pop() -> T? {
+    func pop() -> Element? {
         stack.popLast()
     }
 }
