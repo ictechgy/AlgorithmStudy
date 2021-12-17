@@ -7,26 +7,26 @@
 
 import Foundation
 
-class Queue<Value> {
-    var storage : [Value]?
+class Queue<Element> {
+    var storage : [Element]?
     
-    func enqueue(value: Value) {
-        storage?.append(value)
+    func enqueue(value: Element) {
+        storage?.append(Element)
     }
     
-    func dequeue() -> Value? {
-        storage?.removeFirst()
+    func dequeue() -> Element? {
+        storage?.dropFirst()
     }
     
     func empty() {
         storage =  nil
     }
     
-    func front() -> Value? {
+    func front() -> Element? {
         storage?.first
     }
     
-    func back() -> Value? {
+    func back() -> Element? {
         storage?.last
     }
     
