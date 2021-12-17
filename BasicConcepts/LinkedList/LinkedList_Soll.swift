@@ -5,7 +5,7 @@
 //  Created by Dasoll Park on 2021/12/16.
 //
 
-class Node<T: Equatable> {
+final class Node<T: Equatable> {
     let item: T
     var next: Node?
     
@@ -15,13 +15,14 @@ class Node<T: Equatable> {
     }
 }
 
-class LinkedList<T: Equatable> {
+final class LinkedList<T: Equatable> {
     private var head: Node<T>?
+    
     var isEmpty: Bool {
         head == nil
     }
     
-    func insert(item: T) {
+    func insert(_ item: T) {
         if head == nil {
             head = Node(item: item, next: nil)
             return
