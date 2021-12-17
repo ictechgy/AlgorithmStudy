@@ -70,15 +70,106 @@
 + boj: 문제명
 + programmers: 문제명
 + concepts: 알고리즘/자료구조 구현이름
++ 수정의 경우에도 prefix는 `boj/programmers/concepts`로 작성 해주세요. 
++ 그 외의 경우에는 chore를 써주세요.
 
 &nbsp;   
 
 ## 🔥 진행 기록
 
-| week | 미리 해오기 | 다룬 내용 | 푼 문제 |
-| :---: |:---| :-------: | :-----: |
-| 1주차(2021-12-10)| 1. 시간복잡도에 대한 강의 두개-[첫번째](https://www.youtube.com/watch?v=kg-bcK1ygIA), [두번째](https://www.youtube.com/watch?v=SO7xhml3Np4)- 들어오기<br/>2. 백준 [입출력과 사칙연산 11문제](https://www.acmicpc.net/step/1) 모두 풀어오기<br/>3. 기본적인 자료구조(스택, 큐, 연결리스트) 구현해오기<br/>4. 백준 문제 풀어오기<br/>[10828-스택](https://www.acmicpc.net/problem/10828), [4949-균형잡힌 세상](https://www.acmicpc.net/problem/4949)<br/> [18258-큐 2](https://www.acmicpc.net/problem/18258), [11866-요세푸스 문제 0](https://www.acmicpc.net/problem/11866)  |           |         |
+| week | 미리 해오기 |
+| :---: |:---| 
+| 1주차(~2021-12-10)| 1. 시간복잡도에 대한 강의 두개-[첫번째](https://www.youtube.com/watch?v=kg-bcK1ygIA), [두번째](https://www.youtube.com/watch?v=SO7xhml3Np4)- 들어오기<br/>2. 백준 [입출력과 사칙연산 11문제](https://www.acmicpc.net/step/1) 모두 풀어오기<br/>3. 기본적인 자료구조(스택, 큐, 연결리스트) 구현해오기<br/>4. 백준 문제 풀어오기<br/>[10828-스택](https://www.acmicpc.net/problem/10828), [4949-균형잡힌 세상](https://www.acmicpc.net/problem/4949)<br/> [18258-큐 2](https://www.acmicpc.net/problem/18258), [11866-요세푸스 문제 0](https://www.acmicpc.net/problem/11866)  |
+| 2주차(~2021-12-17)| 1. 알고리즘 강의 '순환 (Recursion) 의 개념과 기본 예제 1~3' 듣고 피보나치, 팩토리얼 재귀함수로 구현해오기. <br/> 2. 1주차에 다 하지 못한 내용 해오기|
 
+&nbsp;
+
+<details>
+<summary><b>1주차(2021-12-10) 진행내용<b/></summary>
+<div markdown="1">
+  
+### 1. 시간복잡도란? 
+  정의 : 알고리즘의 연산이 몇번 이루어지는지를 나타내는 것, 알고리즘이 얼마나 빠른지를 나타내는 것
+
+실행시간은 실행환경에 따라 달라지므로 주로 연산의 실행 횟수를 입력 데이터 크기에 대한 함수로 표현한 것(최악의 경우, 또는 평균적인 경우를 가정)
+
+- 최악의 경우 시간복잡도 → 주로 사용됨(평균 시간 복잡도 계산은 어렵기 때문)
+- 평균 시간복잡도
+  
+&nbsp;   
+### 2. 공간복잡도란?   
+  시간 복잡도와 달리 실행환경의 메모리 공간을 따지는 분석법
+  
+프로그램을 실행시킨 후 완료하는 데 필요로하는 자원 공간의 양이다.
+고정 공간과 가변 공간으로 나타낼 수 있다.
+- 고정 공간: 입출력 횟수, 크기와 관계없는 공간
+- 가변 공간: 알고리즘의 특정 인스턴스에 의존하는 크기를 가진 구조화 변수를 위해 필요로하는 공간, 동적으로 필요한 공간
+  
+출처 - [오늘도 MadPlay!](https://madplay.github.io/post/time-complexity-space-complexity)
+  
+&nbsp;   
+### 3. 시간복잡도가 그리 중요할까?   
+  시간은 금이다.   
+  RAM과 같은 저장장치의 크기가 증가해서 공간복잡도는 이제 크게 신경을 안써줘도 됨
+  
+&nbsp;   
+### 4. 시간복잡도는 어디에서 볼 수 있었을까?   
+  iOS 프로그래밍 할때 함수들 공식문서에서 볼 수 있었다.    
+  ![image](https://user-images.githubusercontent.com/39452092/145572133-ab51025f-a0ba-44fd-9323-4117ff6a0010.png)
+  
+&nbsp;   
+### 5. 알고리즘 문제를 풀 때 !(강제 언래핑)를 쓰면 안되는걸까? (어느정도까지 코드 컨벤션을 둬야 할까?)
+  + 문제 시간제한으로 인해 컨벤션까지 신경 쓸 여유가 없다. (리팩토링은 나중에 시간이 남으면 해도 되지 않을까?)
+  + 알고리즘 문제는 어떤 입력이 들어올지 명확히 주어져 있기 때문에 강제 언래핑을 써도 된다고 생각한다.
+  + 다만 `guard let`이나 `if let` 등 옵셔널과 옵셔널 바인딩을 필요에 따라 자주 쓰는 경우는 많았다.
+  + 변수명도 잘 지어주는 것이 문제를 푸는 데에도 좋았던 것 같다.(내가 푼 것 다시 체크할 때 등)   
+  (코딩 테스트 푼 것에 대해 면접에서 리뷰를 하는 경우 !를 막 쓴 것이 안좋은 요소가 될 수도 있다고 하는데 정말일까?)
+  
+&nbsp;   
+### 6. 입출력 시간초과에 대해. -> 백준 큐2 문제
+  [Issue #1 참고](https://github.com/ictechgy/AlgorithmStudy/issues/1)
+  
+&nbsp;   
+### 7. 커밋 규칙 추가에 대해(커밋 규칙 지켜주세요, 이슈올리면 채팅에 말해주세요)
+  처리 완료
+  
+&nbsp;   
+### 8. 문제를 풀 때 `import Foundation`이 꼭 필요할까? 
+  Swift Standard Library만을 이용해서 구현이 가능한 경우에는 import가 필요없다!
+  Foundation을 가져오는 것 자체가 시간복잡도에 영향을 미치는 것인지는 잘 모르겠다.(import 자체는 컴파일 타임에만 영향이 있지 않을까?) 
+  
+&nbsp;   
+### 9. `split(separator:)`와 `components(separatedBy:)`의 차이
+  + split: Swift Standard Library에 존재
+    + String 원문을 참조하고 있는 Substring 배열을 반환한다. 복사같은 과정이 없으므로 빠르다.
+    + (Substring으로 받은 뒤 String으로 변환해서 쓰는게 빠르다!!)
+  + components: Foundation Framework에 존재
+    + String 배열 자체를 반환한다.    
+  + 참고 링크
+    + https://velog.io/@minni/Swift-split-VS-components
+    + https://odong-tree.github.io/swift/2021/05/22/split&components/
+  
+&nbsp;   
+### 10. 아래 문장의 시간복잡도는?
+```c
+for(i=1; i<n; i*=2) 
+{
+    //Do something
+}
+```
+<img width="600" alt="스크린샷 2021-12-10 오후 8 28 14" src="https://user-images.githubusercontent.com/39452092/145567335-375f5bf2-7b0f-416e-81fc-6b5ecfd621e5.png">
+  
+  + 정의역-공역 관점에서(수박): 정의역과 공역의 관점에서 살펴보면 정의역은 n개가 있지만 이에 매칭되는 치역은 n개에 미치지 못한다. 때문에 시간복잡도는 `Θ(n)`이 아니다. 
+  
+  + 2의 곱셈 개수를 파악하는 관점에서(코든 - 위 스크린샷 참고): i값은 1부터 2, 4, 8, 16... 순서로 증가해 나간다. 이 때 우리가 주목해야 할 것은 변화하는 'i값 추적'이 아니라 'i의 시작값 1에 몇번의 2를 곱해야 n이 되느냐'이다. 이는 식으로 나타내면 `1*2^x = n` 이 되며 이 때 x의 값이 반복문의 실행횟수가 된다. 양변에 `log_2`를 취하면 `x = log_2 n`이 된다. 따라서 반복문의 시간복잡도는 `Θ(log_2 n)`이 된다. 
+  + Θ와 O측면: 위의 반목문 시간복잡도는 Θ표기법에 의해 `Θ(log n)`이다. 이는 `O(log n)`이라고 말할 수도 있다. 하지만 Big-O 표기법 자체가 upper bound를 표현하기 때문에 위의 반복문은 `O(n)`, `O(n^2)` 시간복잡도를 가진다고 말할 수도 있다.
+  
+&nbsp;   
+### 11. `SubString`을 `Int`로 바로 변환하는 것보다 `String`으로 변환한 뒤에 `Int`로 바꾸는 것이 더 빠르다!!!
+  https://icksw.tistory.com/218
+&nbsp;   
+</div>
+</details>
 
 
 &nbsp;   
