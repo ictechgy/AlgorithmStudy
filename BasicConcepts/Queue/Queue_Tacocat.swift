@@ -8,7 +8,7 @@
 import Foundation
 
 class Queue<Element> {
-    var storage : [Element]?
+    private var storage : [Element]?
     
     func enqueue(value: Element) {
         storage?.append(Element)
