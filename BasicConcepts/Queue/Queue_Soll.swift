@@ -5,24 +5,27 @@
 //  Created by Dasoll Park on 2021/12/16.
 //
 
-class Queue<T> {
-    var queue: [T] = []
-    var top: T? {
-        queue.first
+final class Queue<Element> {
+    private var storage: [Element] = []
+    
+    var head: Element? {
+        storage.first
     }
     var isEmpty: Bool {
-        queue.isEmpty
+        storage.isEmpty
     }
     var size: Int {
-        queue.count
+        storage.count
     }
     
-    func enqueue(item: T) {
-        queue.append(item)
+    func enqueue(_ item: Element) {
+        storage.append(item)
     }
     
-    func dequeue() -> T? {
-        if queue.isEmpty { return nil }
-        return queue.removeFirst()
+    func dequeue() -> Element? {
+        if storage.isEmpty { return nil }
+        let element = storage.first
+        storage = Array(storage.dropFirst())
+        return element
     }
 }
