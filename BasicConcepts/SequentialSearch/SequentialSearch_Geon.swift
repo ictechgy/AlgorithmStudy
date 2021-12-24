@@ -5,12 +5,21 @@
 //  Created by 김준건 on 2021/12/24.
 //
 
-func search<T: Equatable>(into list: [T], target: T, begin: Int, end: Int) -> Int {
-    if begin > end {
-        return -1
-    } else if list[begin] == target {
-        return begin
+func search<T: Equatable>(into container: [T], target: T, startIndex: Int, endIndex: Int) -> Int? {
+    if startIndex > endIndex {
+        return nil
+    } else if container[startIndex] == target {
+        return startIndex
     } else {
-        return search(into: list, target: target, begin: begin + 1, end: end)
+        return search(into: container, target: target, startIndex: startIndex + 1, endIndex: endIndex)
     }
+}
+
+func search<T: Equatable>(into container: [T], target: T) -> Int? {
+    for index in container.indices {
+        if container[index] == target {
+            return index
+        }
+    }
+    return nil
 }
