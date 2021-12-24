@@ -9,8 +9,7 @@ func search<T: BinaryInteger>(into list: [T], target: T, startIndex: Int, endInd
     let middle = startIndex + endIndex / 2
     if list[startIndex] == target {
         return startIndex
-    }
-    else if middle > target {
+    } else if list[middle] > target {
         return search(into: list, target: target, startIndex: startIndex + 1, endIndex: middle)
     } else {
         return search(into: list, target: target, startIndex: middle, endIndex: endIndex)
