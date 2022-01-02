@@ -94,7 +94,7 @@ func solution(_:) {
 + boj: 문제명
 + programmers: 문제명
 + concepts: 알고리즘/자료구조 구현이름
-+ 수정의 경우에도 prefix는 `boj/programmers/concepts`로 작성 해주세요. 
++ 수정의 경우에도 prefix는 `boj || programmers || concepts`로 작성 해주세요. 
 + 그 외의 경우에는 chore를 써주세요.
 
 &nbsp;   
