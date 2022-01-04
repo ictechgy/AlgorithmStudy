@@ -72,6 +72,7 @@ func countingCellsEiBlob(y: Int, x: Int) -> Int {
     }
 }
 
+/*
 for y in 0...7 {
     for x in 0...7 {
         currentBlobs = blobs
@@ -85,3 +86,4 @@ for y in 0...7 {
 currentBlobs.forEach { nodes in
     print(nodes)
 }
+*/
