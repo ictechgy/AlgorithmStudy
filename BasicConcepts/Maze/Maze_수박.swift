@@ -106,8 +106,10 @@ func findMazePath(y: Int, x: Int) -> Bool {
     }
 }
 
+/*
 print(findMazePath(y: 0, x: 0) ? "There is a way!" : "You died")
 maze.forEach({ nodes in
     print(nodes)
 })
 
+*/
