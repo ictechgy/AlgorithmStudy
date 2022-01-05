@@ -57,7 +57,7 @@ if let input = readLine() {
     for y in 0..<height {
         for x in 0..<width {
             let isEnemy = map[y][x].isEnemy
-            let count = countingCellsInEiBlob(y: y, x: x, when: isEnemy, within: &map)
+            let count = countingCellsInEiBlob(y: y, x: x, with: isEnemy, within: &map)
 
             if isEnemy {
                 result.enemy += count * count
@@ -74,7 +74,7 @@ if let input = readLine() {
 //3v
 func countingCellsInEiBlob(
     y:Int, x:Int,
-    when condition: Bool,
+    with condition: Bool,
     within map: inout [[Node]]
 ) -> Int {
     guard y < map.count, x < map[0].count else { return .zero }
@@ -94,7 +94,7 @@ func countingCellsInEiBlob(
 
     return 1 + directions.reduce(0, { partialResult, point in
         partialResult +
-        countingCellsInEiBlob(y: point.y, x: point.x, when: condition, within: &map)
+        countingCellsInEiBlob(y: point.y, x: point.x, with: condition, within: &map)
     })
 }
 
