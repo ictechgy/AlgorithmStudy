@@ -4,7 +4,6 @@
 //
 //  Created by 이예원 on 2022/01/07.
 //
-
 import Foundation
 
 let a = Int(readLine()!)!
