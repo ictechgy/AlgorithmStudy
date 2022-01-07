@@ -371,6 +371,120 @@ for(i=1; i<n; i*=2)
 </div>
 </details>  
 
+  
+<details>
+<summary><b>4주차(2022-01-07) 진행내용<b/></summary>
+<div markdown="1">
+  
+### 1. 2차원배열에 접근할 때 `x`와 `y`를 어떻게 쓰는게 좋을까? 
+
++ x를 행(row)에 대해 쓰고 y를 열(column)에 써도 상관은 없다. 하지만 나중에 헷갈릴 수 있다.
+따라서 아래와 같이 사용하도록 하자. (데카르트 좌표계 사용 방식과 동일)
+
+```swift
+let visited = 2
+maze[y][x] = visited
+//y는 row (행 이동)
+//x는 column (열 이동)
+```
++ x, y를 쓰지 않고 row, column을 명시적으로 사용해도 된다.
+
+&nbsp;
+
+### 2. dfs
+- 깊이 우선 탐색(Depth First Search)
+- 완전탐색(Brute Force)에서 많이 사용됨 
+- 일반적으로 `재귀`를 이용하여 구현(`스택`도 가능!)
+
+
+
+|탐색 대상| 탐색 방법 |
+|:---:|:---:|
+|<img src = "https://i.imgur.com/8wC7A6I.png" width = "80%">|<img src = "https://i.imgur.com/ktSJDqq.png" width = "80%">|
+
+&nbsp;
+
+### 3. bfs
+- 너비 우선 탐색(Breadth First Search)
+- 일반적으로 `큐`를 이용하여 구현
+- *물결 모양처럼 퍼져 나간다!*
+
+| 좌표평면 탐색 | 트리 탐색 |
+|:---:|:---:|
+|<img src = "https://i.imgur.com/zLl2rBV.png" width="70%">|<img src = "https://i.imgur.com/h51EYMP.png" width = "90%">|
+
+&nbsp; 
+
+- **내가 찾는 해가 중간 노드에 있을 때는 `dfs`보다 `bfs`가 조금 더 효율적임**
+  
+    <img src = "https://i.imgur.com/1O5uXLO.png" width = "30%">
+
+&nbsp;
+
+### 4. N-Queens Problem
+- dfs 대표문제 
+- 상태공간트리를 그리고 이를 탐색하는 방식으로 풀 수 있다. 
+
+<img src = "https://i.imgur.com/tZIrZci.png" width = "30%">
+
+&nbsp;
+
+### 5. N-Queens Problem 풀이 흐름
+
+| step1 | step2 | step3 |
+| :--------: | :--------: | :--------: |
+|<img src = "https://i.imgur.com/6Zb228c.png" width = "100%">|<img src = "https://i.imgur.com/Sq9174H.png" width = "100%">|<img src = "https://i.imgur.com/hJPgRFl.png" width = "100%">|
+
+- 이렇게 하다보면 특정 상황에서 퀸을 놓을 수 없다는 것을 알게됨. 
+    - 이전으로 다시 돌아가서 새로운 위치에 퀸을 놓는 방식으로 탐색
+
+- **이렇게 중간에 유망하지 않은 노드를 발견한 경우 되돌아가는 기법을 정확히는`백트래킹`이라고 한다.**
+    - 이를 통해 어느정도 최적화를 시킬 수 있다.
+- 이런 재귀를 반복하다보면 결국에는 답이 나온다.
+
+
+| step4 | answer | 
+| :--------: | :--------: |
+| <img src = "https://i.imgur.com/aY7gOPi.png" width = "100%">  | <img src = "https://i.imgur.com/jvBRGhN.png" width = "100%">|
+
+
+&nbsp;
+
+
+- 트리와 함께 보는 dfs 
+
+| 상태공간트리와 함께 | 상태공간트리만 |answer(leaf)|
+| :--------: | :--------: | :--------:|
+| <img src = "https://i.imgur.com/7co3Dlq.png" width = "100%">     | <img src = "https://i.imgur.com/WmdXKOc.png" width = "100%">     | <img src = "https://i.imgur.com/tHQ40xn.png" width = "100%">
+
+&nbsp;
+
+
+### 6. 배열을 sort할 때 기준을 부여할 수 있다. 
+```swift
+let array = [1, 3, 2]
+array.sorted { $0 < $1 } //오름차순
+array.sorted { $0 > $1 } //내림차순
+```
+
+&nbsp;
+
+### 7. 입력값을 숫자로 변환할 때 꿀팁
+- 입력이 `"5 2"` 일 때 `[5, 2]`로 변환해야 하는 경우
+
+```swift
+//이전
+let size = readLine()!.compactMap { Int(String($0)) }
+let size = readLine()!.split(separator: " ").map { Int($0)! }
+
+//이후
+let size = readLine()!.compactMap { $0.wholeNumberValue }
+```
+
+  
+</div>
+</details>
+
 &nbsp;   
 
 ## 💫 이 스터디를 통해 다루고자 하는 개념들
