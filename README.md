@@ -36,6 +36,30 @@
 
 &nbsp;   
 
+### 코드 작성 시 주의 사항
+Wody가 말해준 것처럼, 알고리즘 풀 때에는 코드에 주석을 답시다. 
+```swift
+/*
+이 문제는 ~을 물어보는 문제
+
+방법
+1. ~을 ~한다
+2. 어쩌고저쩌고
+3. 값을 결과로 반환한다.
+-> 부가적으로 이 방법의 시간복잡도에 대해서도 써줍시다. 
+*/
+
+func solution(_:) {
+// 1. ~을 ~한다.
+코드...
+
+// 2. 어쩌고저쩌고
+코드....
+}
+```
+
+&nbsp;   
+
 ## 💾 Github 이용 방식
 참고: [단국대학교 알고리즘 스터디](https://github.com/DKU-STUDY/Algorithm)
 
@@ -70,7 +94,7 @@
 + boj: 문제명
 + programmers: 문제명
 + concepts: 알고리즘/자료구조 구현이름
-+ 수정의 경우에도 prefix는 `boj/programmers/concepts`로 작성 해주세요. 
++ 수정의 경우에도 prefix는 `boj || programmers || concepts`로 작성 해주세요. 
 + 그 외의 경우에는 chore를 써주세요.
 
 &nbsp;   
@@ -82,6 +106,7 @@
 | 1주차(~2021-12-10)| 1. 시간복잡도에 대한 강의 두개-[첫번째](https://www.youtube.com/watch?v=kg-bcK1ygIA), [두번째](https://www.youtube.com/watch?v=SO7xhml3Np4)- 들어오기<br/>2. 백준 [입출력과 사칙연산 11문제](https://www.acmicpc.net/step/1) 모두 풀어오기<br/>3. 기본적인 자료구조(스택, 큐, 연결리스트) 구현해오기<br/>4. 백준 문제 풀어오기<br/>[10828-스택](https://www.acmicpc.net/problem/10828), [4949-균형잡힌 세상](https://www.acmicpc.net/problem/4949)<br/> [18258-큐 2](https://www.acmicpc.net/problem/18258), [11866-요세푸스 문제 0](https://www.acmicpc.net/problem/11866)  |
 | 2주차(~2021-12-17)| 1. 알고리즘 강의 '순환 (Recursion) 의 개념과 기본 예제 1~3' 듣고 피보나치, 팩토리얼 재귀함수로 구현해오기. <br/> 2. 1주차에 다 하지 못한 내용 해오기|
 | 3주차(~2021-12-24)| 1. '2주차 강의'에서 나온 아래 두 개념을 구현해보자<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `순차 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `이진 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>2. 문제 풀어오기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [숫자 카드 2](https://www.acmicpc.net/problem/10816) 풀기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [완전탐색-모의고사](https://programmers.co.kr/learn/courses/30/parts/12230) 풀기<br/>• 다음주에 추가적으로 이야기 해볼 내용 - 피보나치, 팩토리얼 - Memoization, DP 찍먹<br/>&nbsp;&nbsp;&nbsp;&nbsp;▪︎ 재귀 최적화와 꼬리 재귀도 같이 알아보면 좋을 것 같다.|
+| 4주차(~2022-01-07)| 1. 'Recursion 응용 - 미로찾기 1' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의에서 나오는 예제를 가지고 미로찾기 구현해보기<br/> 2. 'Recursion 응용 2' 강의 듣기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- 예제 2차원 배열을 가지고 Counting Cells in a Blob 구현해보기<br/>• **좌표 x, y에 대한 고민**<br/>• [백준 단지번호붙이기](https://www.acmicpc.net/problem/2667) 풀기<br/>• [백준 전쟁 - 전투](https://www.acmicpc.net/problem/1303) 풀기<br/>• [프로그래머스 - 수박수박수박수박수박수?](https://programmers.co.kr/learn/courses/30/lessons/12922) 풀기
 
 &nbsp;
 
@@ -289,6 +314,62 @@ for(i=1; i<n; i*=2)
   
 </div>
 </details>
+  
+<details>
+<summary><b>3주차(2021-12-24) 진행내용<b/></summary>
+<div markdown="1">
+  
+## 정리
+### 검색을 구현할 때 결과를 찾지 못하면 무엇을 반환?
+- `Int` 인덱스 값 반환이 명시적인 경우에는`-1`을 반환할 수 있다. 
+
+- 에러를 `throw`하는 것도 방법일 수 있다. 
+- `Result`타입을 반환할 수 있다. 
+- **`nil`을 반환할 수도 있다. 즉 반환값이 옵셔널!**
+
+&nbsp;   
+
+### 반복문과 재귀의 비교(소감)
+- 타코캣 : 반복문이 재귀보다 더 이해하기 쉬운 느낌이 들었다. 반복문을 재귀보다 더 많이 썼기 때문에 익숙해서 그런 것 같다. 
+
+- 수박: 재귀의 경우 파라미터가 많아져서 이름짓기가 곤란한 경우가 있었다. 특히 라벨링을 하고자 하는 경우 생각할 게 많아져서 잘 읽히지 않는 함수가 되거나 딱딱하게 읽히는 함수가 되어서 곤란했다. 하지만 하고 나면 로직 자체는 사람이 말하는 것처럼 쉽게 읽혀져서 좋았다. 반복문의 경우에는 컴퓨터가 말하는 걸 읽는 것 같아서 단순하게 느껴졌다 
+
+- Geon :  재귀의 경우 반복문보다 좀더 리소스가 낭비되는 느낌?? 내부적으로 함수가 중첩적으로 실행되는 느낌이여서 한눈에 파악하기도 어려웠던것 같다.
+
+&nbsp;
+
+### 숫자 카드 2
+- 로직에 문제가 없는데 시간초과가 나는 경우 Fast I/O를 적용해 볼 것. 
+
+- [Issue #6](https://github.com/ictechgy/AlgorithmStudy/issues/6)
+
+&nbsp; 
+
+## Memoization, DP 찍먹
+- 피보나치의 경우 값 기록을 통해 최적화를 할 수 있다! 
+
+- **최적해의 부분 해가 그 부분에 대한 최적 해!**
+- 나중에 자세히 알아봅시다~ 😆
+
+&nbsp;
+
+## 꼬리재귀와 재귀 최적화
+- 일반적인 재귀는 함수가 반복적으로 호출됨에 따라 스택에 프레임이 계속 쌓이게 된다. 
+
+    - 이는 오버헤드가 큰 작업이다. 
+- 꼬리재귀를 쓰면 컴파일러가 최적화를 해준다! 
+    - Swift의 경우 Xcode 설정이 필요하며 언어에 따라 다를 수 있다.
+
+    - [티스토리 - jooing](https://joooing.tistory.com/entry/%EC%9E%AC%EA%B7%80-%E2%86%92-%EA%BC%AC%EB%A6%AC-%EC%9E%AC%EA%B7%80-Tail-Recursion)
+- 꼬리 재귀 최적화의 대표적인 예로는 팩토리얼이 있다. 
+
+&nbsp;
+
+## 추후 확인하면 좋은 내용
+1. String에서는 Int로 된 subscript를 쓸 수 없다! 
+
+</div>
+</details>  
 
 &nbsp;   
 
