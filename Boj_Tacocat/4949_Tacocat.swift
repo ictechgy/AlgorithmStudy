@@ -7,130 +7,76 @@
 
 import Foundation
 
-enum Parenthesis: String {
-    case smallLeft = "("
-    case smallRight = ")"
-    case bigLeft = "["
-    case bigRight = "]"
+/*
+이 문제는 스택을 활용하는 문제
+
+방법
+1. 괄호들을 추출한다
+2. 괄호를 저장한 배열과 추가하는 배열을 비교한다.
+3. 일치하는 경우 스택에 쌓지 않고 마지막 원소는 삭제한다.
+*/
+
+var flag = true
+var result = ""
+
+enum Bracket: Character {
+    case roundOpen = "("
+    case roundClose = ")"
+    case rectOpen = "["
+    case rectClose = "]"
     
-    var mate: Self? {
+    var mate: Self {
         switch self {
-        case .smallLeft:
-            return .smallRight
-        case .bigLeft:
-            return .bigRight
-        default:
-            return nil
+        case .roundOpen:
+            return .roundClose
+        case .roundClose:
+            return .rectOpen
+        case .rectOpen:
+            return .rectClose
+        case .rectClose:
+            return .rectOpen
         }
     }
 }
 
-struct Stack {
-    var store: [String] = []
+class Stack {
+    var storage: [Character] = []
     
-    mutating func push(this: String) {
-        guard let parenthesis = Parenthesis.init(rawValue: this) else {
-            return
-        }
-        
-        guard let top = self.top() else {
-            self.store.append(parenthesis.rawValue)
-            return
-        }
-       
-        if checkMatching(with: top, and: this) {
-            let last = self.store.popLast()
-        } else {
-            self.store.append(parenthesis.rawValue)
-        }
+    func pop() -> Character? {
+        return storage.popLast()
     }
     
-    func top() -> String? {
-        if let last =  self.store.last {
-            return last
-        } else {
-            return nil
-        }
-    }
-    
-    func checkMatching(with top: String,
-                       and new: String) -> Bool {
-        guard let parenthesisFirst = Parenthesis.init(rawValue: top),
-              let parenthesisSecond = Parenthesis.init(rawValue: new)
-        else {
-            return false
-        }
-        
-        if parenthesisFirst.mate == parenthesisSecond {
-            return true
-        } else {
-            return false
-        }
+    func push(element: Character) {
+        storage.append(element)
     }
 }
 
-struct Manager {
-    enum Answer: String {
-        case yes
-        case no
-    }
-    
-    var stack = Stack()
-    var sentences: [String] = []
-    var result: [Answer.RawValue] = []
-    
-    mutating func splitSentences(input: String) {
-        sentences = [input]
-    }
-    
-    mutating func check() {
-        sentences.compactMap { line in
-            line.components(separatedBy: " ").compactMap { word in
-                var index = 0
-                
-                for _ in word {
-                    index += 1
-                }
-                
-                for i in 0...index - 1 {
-                    let cha = word.getChar(at: i)
-                    stack.push(this: String(cha))
-                }
-               
-            }
-        }
-        if stack.store.isEmpty {
-            result.append(Answer.yes.rawValue)
-        } else {
-            result.append(Answer.no.rawValue)
+while let input = readLine(), input != "." {
+    let stack = Stack()
+    var isSymetric = false
+
+    for character in input {
+        if character == Bracket.rectOpen.rawValue {
+            stack.push(element: character)
+        } else if character == Bracket.roundOpen.rawValue {
+            stack.push(element: character)
+        } else if character == Bracket.rectClose.rawValue &&
+                    stack.storage.last == Bracket.rectOpen.rawValue {
+           let _ = stack.pop()
+        } else if character == Bracket.roundClose.rawValue &&
+                    stack.storage.last == Bracket.roundOpen.rawValue {
+            let _ = stack.pop()
+        } else if character == Bracket.roundClose.rawValue || character == Bracket.rectClose.rawValue {
+            isSymetric = true
+            break
         }
     }
     
-    func showResult() {
-        result.compactMap {
-            print($0)
-        }
+    if stack.storage.count == .zero, isSymetric == false {
+        result += "yes\n"
+    } else {
+        result += "no\n"
     }
 }
 
-extension String {
-    func getChar(at index: Int) -> Character {
-        return self[self.index(self.startIndex, offsetBy: index)]
-    }
-}
-
-var manager = Manager()
-
-func check() {
-    let input = readLine()!
-    
-    if input != "." {
-        manager.splitSentences(input: input)
-        manager.check()
-        check()
-        return
-    }
-    manager.showResult()
-}
-
-check()
+print(result.trimmingCharacters(in: .whitespacesAndNewlines))
