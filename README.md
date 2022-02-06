@@ -476,10 +476,12 @@ array.sorted { $0 > $1 } //내림차순
 ```swift
 //이전
 let size = readLine()!.compactMap { Int(String($0)) }
-let size = readLine()!.split(separator: " ").map { Int($0)! }
+let size = readLine()!.split(separator: " ").map { Int(String($0))! } 
+//SubString에서 Int로 바로 변환하는 것보다 String으로 먼저 변환 후 Int로 바꾸는 것이 더 빠름 - 1주차 정리 참고
 
 //이후
 let size = readLine()!.compactMap { $0.wholeNumberValue }
+//다만 이 방법은 10 이상의 숫자가 들어오는 경우 사용할 수 없음
 ```
 
   
