@@ -488,6 +488,69 @@ let size = readLine()!.compactMap { $0.wholeNumberValue }
   
 </div>
 </details>
+  
+<details>
+<summary><b>5주차(2022-02-11) 진행내용<b/></summary>
+<div markdown="1">
+
+### 1. N-Queens Problem
++ 모든 경우에 대해서 DFS / 백트래킹을 해도 되지만, 첫번째 행에 있어 좌우대칭이 이루어지기 때문에 조사해야 하는 경우의 수를 반으로 줄일 수 있다. 
+
++ 만약 백트래킹 없이 모든 경우의 수를 조사해야 했다면 이 때의 시간복잡도는 몇이었을까? 
+
+    ➡️ O(N^N)이었을 것이다.
+    
+    + 따라서 유망(Promising)하지 않은 노드들을 가지치기 해줄 수 있다면 해주도록 하자.
+
+&nbsp; 
+### 2. [백준 9663번](https://www.acmicpc.net/problem/9663) 시간초과에 대하여
++ 이 문제는 N-Queens Problem이다. 
+
++ [C++로 풀이](https://github.com/ictechgy/AlgorithmStudy/blob/coden/Boj_Coden/9663_Coden.cpp)를 해보았을 때에는 잘 풀리지만 동일한 로직을 Swift로 구현해보면 시간초과가 발생한다.
++ *때문에 우리는 Swift에 대한 시간제한이 잘못 걸려있다고 판단하였다.*
++ **다만 좌우대칭의 특성을 이용하여 풀이를 하면 시간초과가 안나도록 풀 수 있기는 하다.** - 관련 Issue는 [이곳](https://github.com/ictechgy/AlgorithmStudy/issues/7) 참고
+
+
+&nbsp;
+### 3. Optional을 언래핑해서 쓸 수 있는 flatMap
++ 우리는 보통 `flatMap`을 배열 flatten에 사용한다.
++ 이 목적의 `flatMap` 말고도 옵셔널에 사용할 수 있는 `flatMap`이 존재한다. 
+
+```swift
+//우리가 기존에 알고있던 flatMap (compactMap은 덤)
+let numbers = [nil, Optional(3), 4].compactMap { $0 } // numbers -> [3, 4]
+let numberSequence = [[1, 2, 3], [4, 5, 6], [7, 8, 9]].flatMap { $0 } // numberSequence -> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+//오픈마켓에서의 옵셔널 flatMap 사용 예시
+//string 타입의 newElement를 Data 타입으로 변환한 뒤 nil이 아니면 flatMap 클로저 내부의 내용을 실행
+extension Data {
+    func appending(_ newElement: String) -> Data {
+        var copyData = self
+        newElement.data(using: .utf8).flatMap { copyData.append($0) }
+        return copyData
+    }
+}
+```
+&nbsp;
+
+* 실제로 두 `flatMap`의 함수 원형은 다른 형태이다. 
+```swift
+//Array의 flatMap
+func flatMap<SegmentOfResult>(_ transform: (Element) throws -> SegmentOfResult) 
+    rethrows -> [SegmentOfResult.Element] where SegmentOfResult : Sequence
+
+//Optional의 flatMap
+func flatMap<U>(_ transform: (Wrapped) throws -> U?) rethrows -> U?
+```
+
+&nbsp; 
+### 4. Functional Programming 키워드
+* map의 정의가 무엇인지, flatMap의 정의가 무엇인지 정확히 파악하자.
+* map을 사용하는 functor란 무엇인지, map의 인자로 transform이라고 하는 클로저를 받게 되는데, 이때의 transform이 다시 map이라면?
+* flatMap을 사용하는 monad란 무엇인지, flatMap은 map과는 어떤 차이점이 있는지?
+
+</div>
+</details>
 
 &nbsp;   
 
