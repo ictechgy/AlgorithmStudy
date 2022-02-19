@@ -109,7 +109,7 @@ func solution(_:) {
 | 4주차(~2022-01-07)|<br/> 1. 'Recursion 응용 - 미로찾기 1' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의에서 나오는 예제를 가지고 미로찾기 구현해보기<br/> 2. 'Recursion 응용 2' 강의 듣기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- 예제 2차원 배열을 가지고 Counting Cells in a Blob 구현해보기<br/><br/>• **좌표 x, y에 대한 고민**<br/>• [백준 단지번호붙이기](https://www.acmicpc.net/problem/2667) 풀기<br/>• [백준 전쟁 - 전투](https://www.acmicpc.net/problem/1303) 풀기<br/>• [프로그래머스 - 수박수박수박수박수박수?](https://programmers.co.kr/learn/courses/30/lessons/12922) 풀기<br/><br/>|
 | 방학(~2022-02-06)| <br/>스터디원들 개인 사정으로 인해 잠시 `Study.sleep(forTimeInterval:)` <br/><br/>|
 | 5주차(~2022-02-11)|<br/> 1. 'N-Queens Problem' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의 내용대로 풀이 구현해보기<br/><br/>• [백준 N-Queen](https://www.acmicpc.net/problem/9663) 풀기<br/>• [백준 유기농 배추](https://www.acmicpc.net/problem/1012) 풀기<br/>• [백준 암호 만들기](https://www.acmicpc.net/problem/1759) 풀기<br/>• [(Optional)백준 N과 M(1)](https://www.acmicpc.net/problem/15649) 풀기<br/>• [프로그래머스 타겟 넘버](https://programmers.co.kr/learn/courses/30/lessons/43165) 풀기<br/><br/> |
-| 6주차(~2022-02-18)|<br/> 1. ['미로찾기 - BFS' 강의](https://www.youtube.com/watch?v=16SLOYDCYuc) 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- (강의에 나오는) 6 * 6 미로에 대한 풀이를 BFS로 직접 구현해보기<br/><br/>• [백준 - 토마토](https://www.acmicpc.net/problem/7576) 풀기 <br/>• [백준 - 미로탐색](https://www.acmicpc.net/problem/2178) 풀기 <br/>• [(Optional) 백준 - DSLR](https://www.acmicpc.net/problem/9019) 풀기<br/><br/>|
+| 6주차(~2022-02-19)|<br/> 1. ['미로찾기 - BFS' 강의](https://www.youtube.com/watch?v=16SLOYDCYuc) 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- (강의에 나오는) 6 * 6 미로에 대한 풀이를 BFS로 직접 구현해보기<br/><br/>• [백준 - 토마토](https://www.acmicpc.net/problem/7576) 풀기 <br/>• [백준 - 미로탐색](https://www.acmicpc.net/problem/2178) 풀기 <br/>• [(Optional) 백준 - DSLR](https://www.acmicpc.net/problem/9019) 풀기<br/><br/>|
 
 &nbsp;
 
@@ -552,6 +552,27 @@ func flatMap<U>(_ transform: (Wrapped) throws -> U?) rethrows -> U?
 
 </div>
 </details>
+
+<details>
+<summary><b>6주차(2022-02-19) 진행내용<b/></summary>
+<div markdown="1">
+
+### BFS는 최단경로를 찾을 수 있는 알고리즘이다. 
++ 단, 각 노드 사이의 가중치가 모두 동일한 경우에만 최단경로를 찾을 수 있다. 
+
++ 각 노드 사이의 가중치가 동일하지 않다면 벨만-포드, 다익스트라, 플로이드 와샬 알고리즘 등을 써야 한다. 
+
+### 큐를 구현할 때 `dequeue`의 시간복잡도에 주의하자.
++ `Array`의 `removeFirst()`는 `O(n)`시간복잡도이다. 
+
++ 따라서 `dequeue`할 요소에 대한 포인터(인덱스)를 두는 방식을 고려해보자
++ 참고 링크: [Swift) 큐(Queue) 구현 해보기 - 개발자 소들이](https://babbab2.tistory.com/84)
+  + 소들이가 작성하신 코드 중 `head`를 이용한 큐 구현부에 약간의 오류가 있는 것으로 보인다. (`count` 및 `isEmpty`연산 프로퍼티 구현부 - nil 요소에 대한 고려가 되어있지 않음)
+  + `dequeue`를 할 때마다 빠진 요소를 `nil`로 꼭 바꿔주어야 하는 것은 아니다. 다만 메모리를 아껴야한다면 고려해봄직 함. 
+
+
+</div>
+</details>  
 
 &nbsp;   
 
