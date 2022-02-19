@@ -82,7 +82,7 @@ func solution(_:) {
 
 ### Flow
 + 이 repo에 대한 collarborator 권한을 지닌 각 멤버는 본인의 branch를 판 뒤 그 곳에 코드를 작성/구현한다. 
-+ 금요일 스터디 모임 때 이야기를 나눈 뒤 문제가 없으면 모든 branch를 main에 merge한다.(각자 알아서 merge시키기) 
++ 목요일 스터디 모임 때 이야기를 나눈 뒤 문제가 없으면 모든 branch를 main에 merge한다.(각자 알아서 merge시키기) 
 &nbsp;
 ### Issue
 + 궁금한 것이나 문제가 발생한 것이 있으면 [Issue](https://github.com/ictechgy/AlgorithmStudy/issues)를 이용하도록 한다. Label 필수!
