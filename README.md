@@ -110,6 +110,8 @@ func solution(_:) {
 | 방학(~2022-02-06)| <br/>스터디원들 개인 사정으로 인해 잠시 `Study.sleep(forTimeInterval:)` <br/><br/>|
 | 5주차(~2022-02-11)|<br/> 1. 'N-Queens Problem' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의 내용대로 풀이 구현해보기<br/><br/>• [백준 N-Queen](https://www.acmicpc.net/problem/9663) 풀기<br/>• [백준 유기농 배추](https://www.acmicpc.net/problem/1012) 풀기<br/>• [백준 암호 만들기](https://www.acmicpc.net/problem/1759) 풀기<br/>• [(Optional)백준 N과 M(1)](https://www.acmicpc.net/problem/15649) 풀기<br/>• [프로그래머스 타겟 넘버](https://programmers.co.kr/learn/courses/30/lessons/43165) 풀기<br/><br/> |
 | 6주차(~2022-02-19)|<br/> 1. ['미로찾기 - BFS' 강의](https://www.youtube.com/watch?v=16SLOYDCYuc) 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- (강의에 나오는) 6 * 6 미로에 대한 풀이를 BFS로 직접 구현해보기<br/><br/>• [백준 - 토마토](https://www.acmicpc.net/problem/7576) 풀기 <br/>• [백준 - 미로탐색](https://www.acmicpc.net/problem/2178) 풀기 <br/>• [(Optional) 백준 - DSLR](https://www.acmicpc.net/problem/9019) 풀기<br/><br/>|
+| 7주차(~2022-02-24)|<br/> • [백준 - 빙산](https://www.acmicpc.net/problem/2573) 풀기 <br/>• [백준 - 다리 만들기](https://www.acmicpc.net/problem/2146) 풀기 <br/><br/>|
+
 
 &nbsp;
 
