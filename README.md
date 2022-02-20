@@ -82,7 +82,7 @@ func solution(_:) {
 
 ### Flow
 + 이 repo에 대한 collarborator 권한을 지닌 각 멤버는 본인의 branch를 판 뒤 그 곳에 코드를 작성/구현한다. 
-+ 금요일 스터디 모임 때 이야기를 나눈 뒤 문제가 없으면 모든 branch를 main에 merge한다.(각자 알아서 merge시키기) 
++ 목요일 스터디 모임 때 이야기를 나눈 뒤 문제가 없으면 모든 branch를 main에 merge한다.(각자 알아서 merge시키기) 
 &nbsp;
 ### Issue
 + 궁금한 것이나 문제가 발생한 것이 있으면 [Issue](https://github.com/ictechgy/AlgorithmStudy/issues)를 이용하도록 한다. Label 필수!
@@ -103,11 +103,15 @@ func solution(_:) {
 
 | week | 미리 해오기 |
 | :---: |:---| 
-| 1주차(~2021-12-10)| 1. 시간복잡도에 대한 강의 두개-[첫번째](https://www.youtube.com/watch?v=kg-bcK1ygIA), [두번째](https://www.youtube.com/watch?v=SO7xhml3Np4)- 들어오기<br/>2. 백준 [입출력과 사칙연산 11문제](https://www.acmicpc.net/step/1) 모두 풀어오기<br/>3. 기본적인 자료구조(스택, 큐, 연결리스트) 구현해오기<br/>4. 백준 문제 풀어오기<br/>[10828-스택](https://www.acmicpc.net/problem/10828), [4949-균형잡힌 세상](https://www.acmicpc.net/problem/4949)<br/> [18258-큐 2](https://www.acmicpc.net/problem/18258), [11866-요세푸스 문제 0](https://www.acmicpc.net/problem/11866)  |
-| 2주차(~2021-12-17)| 1. 알고리즘 강의 '순환 (Recursion) 의 개념과 기본 예제 1~3' 듣고 피보나치, 팩토리얼 재귀함수로 구현해오기. <br/> 2. 1주차에 다 하지 못한 내용 해오기|
-| 3주차(~2021-12-24)| 1. '2주차 강의'에서 나온 아래 두 개념을 구현해보자<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `순차 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `이진 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>2. 문제 풀어오기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [숫자 카드 2](https://www.acmicpc.net/problem/10816) 풀기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [완전탐색-모의고사](https://programmers.co.kr/learn/courses/30/parts/12230) 풀기<br/>• 다음주에 추가적으로 이야기 해볼 내용 - 피보나치, 팩토리얼 - Memoization, DP 찍먹<br/>&nbsp;&nbsp;&nbsp;&nbsp;▪︎ 재귀 최적화와 꼬리 재귀도 같이 알아보면 좋을 것 같다.|
-| 4주차(~2022-01-07)| 1. 'Recursion 응용 - 미로찾기 1' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의에서 나오는 예제를 가지고 미로찾기 구현해보기<br/> 2. 'Recursion 응용 2' 강의 듣기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- 예제 2차원 배열을 가지고 Counting Cells in a Blob 구현해보기<br/>• **좌표 x, y에 대한 고민**<br/>• [백준 단지번호붙이기](https://www.acmicpc.net/problem/2667) 풀기<br/>• [백준 전쟁 - 전투](https://www.acmicpc.net/problem/1303) 풀기<br/>• [프로그래머스 - 수박수박수박수박수박수?](https://programmers.co.kr/learn/courses/30/lessons/12922) 풀기
-| 5주차(~2022-01-14)| 1. 'N-Queens Problem' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의 내용대로 풀이 구현해보기<br/>• [백준 N-Queen](https://www.acmicpc.net/problem/9663) 풀기<br/>• [백준 유기농 배추](https://www.acmicpc.net/problem/1012) 풀기<br/>• [백준 암호 만들기](https://www.acmicpc.net/problem/1759) 풀기<br/>• [(Optional)백준 N과 M(1)](https://www.acmicpc.net/problem/15649) 풀기<br/>• [프로그래머스 타겟 넘버](https://programmers.co.kr/learn/courses/30/lessons/43165) 풀기
+| 1주차(~2021-12-10)|<br/> 1. 시간복잡도에 대한 강의 두개-[첫번째](https://www.youtube.com/watch?v=kg-bcK1ygIA), [두번째](https://www.youtube.com/watch?v=SO7xhml3Np4)- 들어오기<br/>2. 백준 [입출력과 사칙연산 11문제](https://www.acmicpc.net/step/1) 모두 풀어오기<br/>3. 기본적인 자료구조(스택, 큐, 연결리스트) 구현해오기<br/>4. 백준 문제 풀어오기<br/>[10828-스택](https://www.acmicpc.net/problem/10828), [4949-균형잡힌 세상](https://www.acmicpc.net/problem/4949)<br/> [18258-큐 2](https://www.acmicpc.net/problem/18258), [11866-요세푸스 문제 0](https://www.acmicpc.net/problem/11866) <br/><br/> |
+| 2주차(~2021-12-17)|<br/> 1. 알고리즘 강의 '순환 (Recursion) 의 개념과 기본 예제 1~3' 듣고 피보나치, 팩토리얼 재귀함수로 구현해오기. <br/> 2. 1주차에 다 하지 못한 내용 해오기 <br/><br/>|
+| 3주차(~2021-12-24)|<br/> 1. '2주차 강의'에서 나온 아래 두 개념을 구현해보자<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `순차 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>&nbsp;&nbsp;&nbsp;&nbsp;- `이진 탐색`을 Swift로 구현해보기 - Iterative, Recursive<br/>2. 문제 풀어오기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [숫자 카드 2](https://www.acmicpc.net/problem/10816) 풀기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- [완전탐색-모의고사](https://programmers.co.kr/learn/courses/30/parts/12230) 풀기<br/><br/>• 다음주에 추가적으로 이야기 해볼 내용 - 피보나치, 팩토리얼 - Memoization, DP 찍먹<br/>&nbsp;&nbsp;&nbsp;&nbsp;▪︎ 재귀 최적화와 꼬리 재귀도 같이 알아보면 좋을 것 같다.<br/><br/>|
+| 4주차(~2022-01-07)|<br/> 1. 'Recursion 응용 - 미로찾기 1' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의에서 나오는 예제를 가지고 미로찾기 구현해보기<br/> 2. 'Recursion 응용 2' 강의 듣기<br/>&nbsp;&nbsp;&nbsp;&nbsp;- 예제 2차원 배열을 가지고 Counting Cells in a Blob 구현해보기<br/><br/>• **좌표 x, y에 대한 고민**<br/>• [백준 단지번호붙이기](https://www.acmicpc.net/problem/2667) 풀기<br/>• [백준 전쟁 - 전투](https://www.acmicpc.net/problem/1303) 풀기<br/>• [프로그래머스 - 수박수박수박수박수박수?](https://programmers.co.kr/learn/courses/30/lessons/12922) 풀기<br/><br/>|
+| 방학(~2022-02-06)| <br/>스터디원들 개인 사정으로 인해 잠시 `Study.sleep(forTimeInterval:)` <br/><br/>|
+| 5주차(~2022-02-11)|<br/> 1. 'N-Queens Problem' 강의 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- 강의 내용대로 풀이 구현해보기<br/><br/>• [백준 N-Queen](https://www.acmicpc.net/problem/9663) 풀기<br/>• [백준 유기농 배추](https://www.acmicpc.net/problem/1012) 풀기<br/>• [백준 암호 만들기](https://www.acmicpc.net/problem/1759) 풀기<br/>• [(Optional)백준 N과 M(1)](https://www.acmicpc.net/problem/15649) 풀기<br/>• [프로그래머스 타겟 넘버](https://programmers.co.kr/learn/courses/30/lessons/43165) 풀기<br/><br/> |
+| 6주차(~2022-02-19)|<br/> 1. ['미로찾기 - BFS' 강의](https://www.youtube.com/watch?v=16SLOYDCYuc) 듣기 <br/>&nbsp;&nbsp;&nbsp;&nbsp;- (강의에 나오는) 6 * 6 미로에 대한 풀이를 BFS로 직접 구현해보기<br/><br/>• [백준 - 토마토](https://www.acmicpc.net/problem/7576) 풀기 <br/>• [백준 - 미로탐색](https://www.acmicpc.net/problem/2178) 풀기 <br/>• [(Optional) 백준 - DSLR](https://www.acmicpc.net/problem/9019) 풀기<br/><br/>|
+| 7주차(~2022-02-24)|<br/> • [백준 - 빙산](https://www.acmicpc.net/problem/2573) 풀기 <br/>• [백준 - 다리 만들기](https://www.acmicpc.net/problem/2146) 풀기 <br/><br/>|
+
 
 &nbsp;
 
@@ -487,6 +491,90 @@ let size = readLine()!.compactMap { $0.wholeNumberValue }
   
 </div>
 </details>
+  
+<details>
+<summary><b>5주차(2022-02-11) 진행내용<b/></summary>
+<div markdown="1">
+
+### 1. N-Queens Problem
++ 모든 경우에 대해서 DFS / 백트래킹을 해도 되지만, 첫번째 행에 있어 좌우대칭이 이루어지기 때문에 조사해야 하는 경우의 수를 반으로 줄일 수 있다. 
+
++ 만약 백트래킹 없이 모든 경우의 수를 조사해야 했다면 이 때의 시간복잡도는 몇이었을까? 
+
+    ➡️ O(N^N)이었을 것이다.
+    
+    + 따라서 유망(Promising)하지 않은 노드들을 가지치기 해줄 수 있다면 해주도록 하자.
+
+&nbsp; 
+### 2. [백준 9663번](https://www.acmicpc.net/problem/9663) 시간초과에 대하여
++ 이 문제는 N-Queens Problem이다. 
+
++ [C++로 풀이](https://github.com/ictechgy/AlgorithmStudy/blob/coden/Boj_Coden/9663_Coden.cpp)를 해보았을 때에는 잘 풀리지만 동일한 로직을 Swift로 구현해보면 시간초과가 발생한다.
++ *때문에 우리는 Swift에 대한 시간제한이 잘못 걸려있다고 판단하였다.*
++ **다만 좌우대칭의 특성을 이용하여 풀이를 하면 시간초과가 안나도록 풀 수 있기는 하다.** - 관련 Issue는 [이곳](https://github.com/ictechgy/AlgorithmStudy/issues/7) 참고
+
+
+&nbsp;
+### 3. Optional을 언래핑해서 쓸 수 있는 flatMap
++ 우리는 보통 `flatMap`을 배열 flatten에 사용한다.
++ 이 목적의 `flatMap` 말고도 옵셔널에 사용할 수 있는 `flatMap`이 존재한다. 
+
+```swift
+//우리가 기존에 알고있던 flatMap (compactMap은 덤)
+let numbers = [nil, Optional(3), 4].compactMap { $0 } // numbers -> [3, 4]
+let numberSequence = [[1, 2, 3], [4, 5, 6], [7, 8, 9]].flatMap { $0 } // numberSequence -> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+//오픈마켓에서의 옵셔널 flatMap 사용 예시
+//string 타입의 newElement를 Data 타입으로 변환한 뒤 nil이 아니면 flatMap 클로저 내부의 내용을 실행
+extension Data {
+    func appending(_ newElement: String) -> Data {
+        var copyData = self
+        newElement.data(using: .utf8).flatMap { copyData.append($0) }
+        return copyData
+    }
+}
+```
+&nbsp;
+
+* 실제로 두 `flatMap`의 함수 원형은 다른 형태이다. 
+```swift
+//Array의 flatMap
+func flatMap<SegmentOfResult>(_ transform: (Element) throws -> SegmentOfResult) 
+    rethrows -> [SegmentOfResult.Element] where SegmentOfResult : Sequence
+
+//Optional의 flatMap
+func flatMap<U>(_ transform: (Wrapped) throws -> U?) rethrows -> U?
+```
+
+&nbsp; 
+### 4. Functional Programming 키워드
+* map의 정의가 무엇인지, flatMap의 정의가 무엇인지 정확히 파악하자.
+* map을 사용하는 functor란 무엇인지, map의 인자로 transform이라고 하는 클로저를 받게 되는데, 이때의 transform이 다시 map이라면?
+* flatMap을 사용하는 monad란 무엇인지, flatMap은 map과는 어떤 차이점이 있는지?
+
+</div>
+</details>
+
+<details>
+<summary><b>6주차(2022-02-19) 진행내용<b/></summary>
+<div markdown="1">
+
+### BFS는 최단경로를 찾을 수 있는 알고리즘이다. 
++ 단, 각 노드 사이의 가중치가 모두 동일한 경우에만 최단경로를 찾을 수 있다. 
+
++ 각 노드 사이의 가중치가 동일하지 않다면 벨만-포드, 다익스트라, 플로이드 와샬 알고리즘 등을 써야 한다. 
+
+### 큐를 구현할 때 `dequeue`의 시간복잡도에 주의하자.
++ `Array`의 `removeFirst()`는 `O(n)`시간복잡도이다. 
+
++ 따라서 `dequeue`할 요소에 대한 포인터(인덱스)를 두는 방식을 고려해보자
++ 참고 링크: [Swift) 큐(Queue) 구현 해보기 - 개발자 소들이](https://babbab2.tistory.com/84)
+  + 소들이가 작성하신 코드 중 `head`를 이용한 큐 구현부에 약간의 오류가 있는 것으로 보인다. (`count` 및 `isEmpty`연산 프로퍼티 구현부 - nil 요소에 대한 고려가 되어있지 않음)
+  + `dequeue`를 할 때마다 빠진 요소를 `nil`로 꼭 바꿔주어야 하는 것은 아니다. 다만 메모리를 아껴야한다면 고려해봄직 함. 
+
+
+</div>
+</details>  
 
 &nbsp;   
 
